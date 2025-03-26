@@ -28,6 +28,21 @@ import Figma from "../components/icons/Figma.astro";
 import AdobeXd from "../components/icons/AdobeXd.astro";
 import Ubuntu from "../components/icons/Ubuntu.astro";
 import ExperienceCard from "../components/ExperienceCard.astro";
+import Tailwind from "../components/icons/Tailwind.astro";
+
+const startYear = 2023;
+const currentYear = new Date().getFullYear();
+const yearsCount = currentYear - startYear;
+
+const currentDate = new Date(); // Fecha actual
+const startActualJob = new Date(2023, 10); // Diciembre de 2023
+
+// Cálculo directo de años y meses
+const totalMonths = (currentDate.getFullYear() - startActualJob.getFullYear()) * 12 
+                   + (currentDate.getMonth() - startActualJob.getMonth());
+
+const currentYears = Math.floor(totalMonths / 12); // Años completos
+const currentMonths = totalMonths % 12; // Meses restantes
 ---
 
 <Layout
@@ -46,8 +61,8 @@ import ExperienceCard from "../components/ExperienceCard.astro";
         <h2 class="text-base lg:text-lg py-6 lg:pr-9 opacity-80">
           Egresado de la carrera de <span class="text-[#E74C3C]"
             >Ingeniería en Sistemas Computacionales</span
-          >, apasionado por el desarrollo software, con un <span
-            class="text-[#E74C3C]">año de experiencia en desarrollo web</span
+          >, apasionado por el desarrollo software, con  <span
+            class="text-[#E74C3C]"> +{ yearsCount } años de experiencia en desarrollo web</span
           >.
         </h2>
         <div
@@ -73,9 +88,9 @@ import ExperienceCard from "../components/ExperienceCard.astro";
       </div>
       <div class="flex justify-center">
         <img
-          src="/public/foto-profile.jpg"
+          src="/foto-profile-2.jpg"
           alt="foto"
-          class="rounded-full w-32 h-32 my-2 lg:mt-2 md:w-40 md:h-40 lg:w-48 lg:h-48 object-cover border-2 border-white"
+          class="rounded-full w-32 h-32 my-2 lg:mt-2 md:w-40 md:h-40 lg:w-48 lg:h-48 object-cover"
         />
       </div>
     </section>
@@ -90,6 +105,7 @@ import ExperienceCard from "../components/ExperienceCard.astro";
           <HTML class="w-auto h-12" />
           <CSS class="w-auto h-12" />
           <Bootstrap class="w-auto h-12" />
+          <Tailwind class="w-auto h-12"/>
         </CardSkill>
         <CardSkill titleCard="Lenguajes de Programación">
           <PHP class="w-auto h-9 mt-3" />
@@ -125,7 +141,10 @@ import ExperienceCard from "../components/ExperienceCard.astro";
         <Title>Experiencia</Title>
       </div>
       <div class="mx-6 lg:mx-44">
-        <ExperienceCard />
+        <ExperienceCard 
+          currentYears={ currentYears}
+          currentMonths={ currentMonths}
+        />
       </div>
     </section>
     <section class="flex flex-col w-full h-auto mx-auto lg:w-[1128px] my-16">
