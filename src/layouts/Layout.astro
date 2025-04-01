@@ -11,7 +11,7 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="cursor-auto">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
@@ -32,11 +32,18 @@ const { title } = Astro.props;
   }
   html {
     font-family: "Onest Variable", system-ui, sans-serif;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
   }
   body {
     background: #09101b;
+    /* background: #243c66; */
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
+  /* #personal,#habilidades,#experiencia,#sobre-mi{
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  } */
 </style>
