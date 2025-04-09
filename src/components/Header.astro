@@ -1,8 +1,14 @@
-<header class="flex fixed top-0 z-10 w-full mx-auto justify-center items-center text-sm lg:text-xl py-7">
+---
+import Home from "./icons/home.astro";
+
+
+---
+<header class="flex fixed top-0 z-10 w-full mx-auto justify-center items-center backdrop-blur text-sm lg:text-xl py-5 md:py-7">
     <nav class="flex flex-row gap-x-3">
-        <a href="#habilidades" class="text-[#F39C12] hover:bg-[white]/10 p-2.5 rounded-lg transition">Habilidades</a>
-        <a href="#experiencia" class="hover:bg-[#0e1829] p-2.5 rounded-lg transition border border-transparent hover:border-white hover:border hover:border-opacity-5">Experiencia</a>
-        <a href="#sobre-mi" class="hover:bg-[#0e1829] p-2.5 rounded-lg transition border border-transparent hover:border-white hover:border hover:border-opacity-5">Sobre mí</a>
-        <a href="" class="hover:bg-[#0e1829] p-2.5 rounded-lg transition border border-transparent hover:border-white hover:border hover:border-opacity-5">Contacto</a>
+        <a href="#home" class="hover:text-[#F39C12] hover:bg-[white]/10 p-2.5 rounded-lg transition"> <Home class="w-auto h-6" /> </a>
+        <a href="#habilidades" class="hover:text-[#F39C12] hover:bg-[white]/10 p-2.5 rounded-lg transition">Skills</a>
+        <a href="#experiencia" class="hover:text-[#F39C12] hover:bg-[white]/10 p-2.5 rounded-lg transition border border-transparent hover:border-white hover:border hover:border-opacity-5">Experience</a>
+        <a href="#sobre-mi" class="hover:text-[#F39C12] hover:bg-[white]/10 p-2.5 rounded-lg transition border border-transparent hover:border-white hover:border hover:border-opacity-5">About me</a>
+        <!-- <a href="" class="hover:text-[#F39C12] hover:bg-[white]/10 p-2.5 rounded-lg transition border border-transparent hover:border-white hover:border hover:border-opacity-5">Contact me</a> -->
     </nav>
 </header>
