@@ -2,11 +2,11 @@
 const { titleCard } = Astro.props;
 ---
 
-<div class="flex flex-col">
+<div class="flex flex-col hover:scale-110 transition">
   <span class="flex justify-center items-center text-base font-bold py-8">
     {titleCard}
   </span>
-  <div class="flex flex-wrap gap-9 justify-center border-2 w-80 h-[350px] pt-6 px-4 rounded-2xl">
+  <div class="flex flex-wrap gap-8 items-center justify-center border-2 w-80 h-[350px] px-4 rounded-2xl">
     <slot />
   </div>
 </div>
