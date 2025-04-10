@@ -29,6 +29,7 @@ import AdobeXd from "../components/icons/AdobeXd.astro";
 import Ubuntu from "../components/icons/Ubuntu.astro";
 import ExperienceCard from "../components/ExperienceCard.astro";
 import Tailwind from "../components/icons/Tailwind.astro";
+import Gmail from "../components/icons/Gmail.astro";
 
 const startYear = 2023;
 const currentYear = new Date().getFullYear();
@@ -55,9 +56,9 @@ const currentMonths = totalMonths % 12; // Meses restantes
     >
       <div class="lg:w-2/3 mt-3">
         <h1
-          class="text-4xl lg:text-5xl text-center md:text-left font-bold text-balance"
+          class="text-4xl lg:text-5xl text-center md:text-left font-bold text-balance px-20 md:px-0"
         >
-          Hola, soy Luis Duran
+          Hi, I'm Luis Duran
         </h1>
         <h2 class="text-base lg:text-lg py-6 lg:pr-9 opacity-80">
           Egresado de la carrera de <span class="text-[#E74C3C]"
@@ -71,19 +72,22 @@ const currentMonths = totalMonths % 12; // Meses restantes
         >
           <Location class="w-4 md:w-5 md:h-6" />
           <span class="self-center text-sm md:text-lg px-2 md:px-3"
-            >Ciudad de México, México</span
+            >Mexico City, Mexico</span
           >
           <span
             class="flex justify-center w-full md:w-auto mb-4 md:mb-0 md:pl-10 md:self-center"
-            ><Bange>Disponible para trabajar</Bange></span
+            ><Bange>Available for freelance work</Bange></span  
           >
         </div>
         <div class="flex gap-7 pt-6 justify-center md:justify-start">
           <a href="https://github.com/THB-L85" target="_blank" class="hover:scale-110 transition duration-300 opacity-75 hover:opacity-100 hover:rotate-12"
-            ><Github class="w-10 h-10" /></a
+            ><Github class="w-10 h-10"/></a
           >
           <a href="https://www.linkedin.com/in/luis-duran-r" target="_blank" class="hover:scale-110 transition duration-300 opacity-75 hover:opacity-100 hover:-rotate-12"
-            ><Linkedin class="w-10 h-10" /></a
+            ><Linkedin class="w-10 h-10"/></a
+          >
+          <a href="mailto:luis.dr85a@gmai.com" target="_blank" class="hover:scale-110 transition duration-300 opacity-75 hover:opacity-100 hover:rotate-12"
+            > <Gmail class="w-14 h-14 -mt-2"/>  </a
           >
         </div>
       </div>
@@ -93,34 +97,22 @@ const currentMonths = totalMonths % 12; // Meses restantes
           alt="foto"
           class="rounded-full size-32 my-2 lg:mt-2 md:w-40 md:h-40 lg:w-48 lg:h-48 object-cover hover:scale-110 transition duration-300"
         />
-        <!-- <div class="relative group h-fit">
-          <img
-            src="./foto-profile-2.jpg"
-            alt="foto"
-            class="rounded-full w-32 h-32 my-2 lg:mt-2 md:w-40 md:h-40 lg:w-48 lg:h-48 object-cover transition duration-500 group-hover:opacity-0"
-          />
-          <img
-            src="./profile-foto-2-Photoroom.jpg"
-            alt="foto hover"
-            class="rounded-full w-32 h-32 my-2 lg:mt-2 md:w-40 md:h-40 lg:w-48 lg:h-48 object-cover absolute inset-0 transition-opacity duration-500 opacity-0 group-hover:opacity-100"
-          />
-        </div> -->
       </div>
     </section>
-    <section class="flex flex-col w-full h-auto mx-auto lg:w-[1128px] pt-28" id="habilidades">
+    <section class="flex flex-col w-full h-auto mx-auto lg:w-[1128px] pt-28" id="skills">
       <div class="flex justify-center mb-10">
-        <Title>Habilidades</Title>
+        <Title>Skills</Title>
       </div>
       <div
         class="flex flex-wrap gap-4 lg:gap-9 justify-center text-center mb-5 lg:mb-16"
       >
-        <CardSkill titleCard="Desarrollo Web">
+        <CardSkill titleCard="Web Development">
           <HTML class="w-auto h-12" />
           <CSS class="w-auto h-12" />
           <Bootstrap class="w-auto h-12" />
           <Tailwind class="w-auto h-12"/>
         </CardSkill>
-        <CardSkill titleCard="Lenguajes de Programación">
+        <CardSkill titleCard="Programming Lenguages">
           <PHP class="w-auto h-9 mt-3" />
           <Java class="w-auto h-12" />
           <CSharp class="w-auto h-12" />
@@ -134,11 +126,11 @@ const currentMonths = totalMonths % 12; // Meses restantes
         </CardSkill>
       </div>
       <div class="flex flex-wrap gap-4 lg:gap-9 justify-center text-center">
-        <CardSkill titleCard="Bases de Datos">
+        <CardSkill titleCard="Data Bases">
           <SQLServer class="w-auto h-12" />
           <MySQL class="w-auto h-12" />
         </CardSkill>
-        <CardSkill titleCard="Herramientas">
+        <CardSkill titleCard="Tools">
           <Git class="w-auto h-12" />
           <GitHubIcon class="w-auto h-12" />
           <Postman class="w-auto h-12" />
@@ -149,9 +141,9 @@ const currentMonths = totalMonths % 12; // Meses restantes
         </CardSkill>
       </div>
     </section>
-    <section id="experiencia" class="flex flex-col w-full h-auto mx-auto lg:w-[1128px] pt-28 my-16">
+    <section id="experience" class="flex flex-col w-full h-auto mx-auto lg:w-[1128px] pt-28 my-16">
       <div class="flex justify-center mb-10">
-        <Title>Experiencia</Title>
+        <Title>Experience</Title>
       </div>
       <div class="mx-6 lg:mx-44">
         <ExperienceCard 
@@ -160,9 +152,9 @@ const currentMonths = totalMonths % 12; // Meses restantes
         />
       </div>
     </section>
-    <section id="sobre-mi" class="flex flex-col w-full h-auto mx-auto lg:w-[1128px] my-16">
+    <section id="about_me" class="flex flex-col w-full h-auto mx-auto lg:w-[1128px] my-16">
       <div class="flex justify-center mb-10">
-        <Title>Sobre mí</Title>
+        <Title>About me</Title>
       </div>
       <div class="mx-10 lg:mx-52 text-base lg:text-lg opacity-80">
         <span>
