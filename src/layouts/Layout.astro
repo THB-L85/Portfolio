@@ -21,8 +21,9 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body class="relative dark:text-white">
-	<div class="absolute top-0 bottom-0 z-[-2] min-h-screen w-full bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
+	<!-- <div class="absolute top-0 bottom-0 z-[-2] min-h-screen w-full bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div> -->
     <Header />
+    <div id="cursor-blur" class="pointer-events-none fixed z-[-1] blur-lg"></div>
     <slot />
   </body>
 </html>
@@ -42,10 +43,6 @@ const { title } = Astro.props;
     flex-direction: column;
     justify-content: center;
   }
-  /* #personal,#habilidades,#experiencia,#sobre-mi{
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
-  } */
   @keyframes borderPulse {
     0%, 100% {
       box-shadow: 0 0 0 0 #21c45db3;
@@ -58,4 +55,52 @@ const { title } = Astro.props;
   .pulsate {
     animation: borderPulse 2s infinite;
   }
+
+  /* #cursor-blur {
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.089), transparent 80%);
+    border-radius: 9999px;
+    transform: translate(-50%, -50%);
+    transition: transform 0.15s ease-out;
+  } */
+  
 </style>
+
+<script type="module">
+const blurCursor = document.getElementById('cursor-blur');
+
+document.addEventListener('mousemove', (e) => {
+  blurCursor.style.left = `${e.clientX}px`;
+  blurCursor.style.top = `${e.clientY}px`;
+});
+
+// Obtener las tarjetas
+const card1 = document.getElementById('card1');
+const card2 = document.getElementById('card2');
+
+// Cuando el mouse entra en la primera tarjeta
+card1.addEventListener('mouseenter', () => {
+    card2.classList.add('opacity-50');
+    card1.firstElementChild.classList.add('text-[#F39C12]');
+});
+
+// Cuando el mouse sale de la primera tarjeta
+card1.addEventListener('mouseleave', () => {
+    card2.classList.remove('opacity-50');
+    card1.firstElementChild.classList.remove('text-[#F39C12]');
+});
+
+// Cuando el mouse entra en la segunda tarjeta
+card2.addEventListener('mouseenter', () => {
+    card1.classList.add('opacity-50');
+    card2.firstElementChild.classList.add('text-[#F39C12]');
+});
+
+// Cuando el mouse sale de la segunda tarjeta
+card2.addEventListener('mouseleave', () => {
+    card1.classList.remove('opacity-50');
+    card2.firstElementChild.classList.remove('text-[#F39C12]');
+});
+  
+</script>
