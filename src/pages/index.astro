@@ -30,6 +30,7 @@ import Ubuntu from "../components/icons/Ubuntu.astro";
 import ExperienceCard from "../components/ExperienceCard.astro";
 import Tailwind from "../components/icons/Tailwind.astro";
 import Gmail from "../components/icons/Gmail.astro";
+import Project from "../components/Project.astro";
 
 const startYear = 2023;
 const currentYear = new Date().getFullYear();
@@ -158,6 +159,16 @@ const currentMonths = totalMonths % 12; // Meses restantes
           currentYears={ currentYears}
           currentMonths={ currentMonths}
         />
+      </div>
+    </section>
+    <section id="projects" class="flex flex-col w-full h-auto mx-auto lg:w-[1128px] pt-28 my-16">
+      <div class="flex justify-center mb-10">
+        <Title>Projects</Title>
+      </div>
+      <div class="mx-4 md:mx-10 lg:mx-32 text-base lg:text-lg">
+        <div class="grid grid-cols-1 gap-4 md:grid-cols-1">
+          <Project linkProject="https://coffee-blog-dev.netlify.app/" linkGithub="https://github.com/THB-L85/coffee_blog" imageProject="./coffee_blog.png" titleProject="Coffee Blog" badges={["HTML","CSS"]}>This is a Coffee Blog for Coffee Lovers & Devs.</Project>
+        </div>
       </div>
     </section>
     <section id="about_me" class="flex flex-col w-full h-auto mx-auto lg:w-[1128px] my-16">
