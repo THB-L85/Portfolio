@@ -30,6 +30,7 @@ import Ubuntu from "../components/icons/Ubuntu.astro";
 import ExperienceCard from "../components/ExperienceCard.astro";
 import Tailwind from "../components/icons/Tailwind.astro";
 import Gmail from "../components/icons/Gmail.astro";
+import Project from "../components/Project.astro";
 
 const startYear = 2023;
 const currentYear = new Date().getFullYear();
@@ -164,16 +165,9 @@ const currentMonths = totalMonths % 12; // Meses restantes
       <div class="flex justify-center mb-10">
         <Title>Projects</Title>
       </div>
-      <div class="mx-10 lg:mx-32 text-base lg:text-lg opacity-80">
-        <div class="grid grid-cols-2 gap-4">
-          <a href="https://coffee-blog-dev.netlify.app/" target="_blank" class="flex flex-col text-center justify-between bg-black group">
-            <img src="/public/coffe_blog.png" alt="img-proyect" class="group-hover:">
-            <h4 class="group-hover:opacity-100 opacity-0 transition-all">Coffee Blog</h4>
-          </a>
-          <a href="https://coffee-blog-dev.netlify.app/" target="_blank" class="flex flex-col text-center justify-between bg-black">
-            <img src="/public/coffe_blog.png" alt="img-proyect" class="">
-            <h4>Coffee Blog</h4>
-          </a>
+      <div class="mx-4 md:mx-10 lg:mx-32 text-base lg:text-lg">
+        <div class="grid grid-cols-1 gap-4 md:grid-cols-1">
+          <Project linkProject="https://coffee-blog-dev.netlify.app/" linkGithub="https://github.com/THB-L85/coffee_blog" imageProject="/public/coffee_blog.png" titleProject="Coffee Blog" badges={["HTML","CSS"]}>This is a Coffee Blog for Coffee Lovers & Devs.</Project>
         </div>
       </div>
     </section>

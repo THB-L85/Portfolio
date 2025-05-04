@@ -1,0 +1,61 @@
+---
+import Github from "../components/icons/Github.astro";
+
+interface Props {
+    badges:       string[];
+    linkProject:  string;
+    imageProject: string;
+    titleProject: string;
+    linkGithub:   string;
+}
+const {linkProject}  = Astro.props;
+const {imageProject} = Astro.props;
+const {titleProject} = Astro.props;
+const {badges}       = Astro.props;
+const {linkGithub}   = Astro.props;
+
+const tags: Record<string, {name:string,class?:string}> = {
+    Laravel: {
+        name:"Laravel",
+        // class:"bg-red-800"
+    },
+    HTML: {
+        name:"HTML",
+        // class:"bg-[#e34c26]/20"
+    },
+    CSS: {
+        name:"CSS",
+        // class:"bg-[#264de4]/20"
+    }
+}
+
+---
+<div class="relative w-full group overflow-hidden rounded-xl">
+    <a href={linkProject} target="_blank">
+        <img src={imageProject} alt="img-proyect" class="w-full h-auto rounded-xl center transition-transform duration-300 group-hover:scale-110">
+        <div class="absolute bottom-0 left-0 right-0 h-[100%] content-end opacity-100 bg-gradient-to-t from-black/70 to-transparent group-hover:bg-gradient-to-t group-hover:from-black/70 group-hover:to-transparent transition-all md:opacity-0 group-hover:opacity-100 duration-300 px-5">
+          <div class="relative -translate-y-4 md:-translate-y-0 md:group-hover:-translate-y-4 transition-transform duration-500 ease-in-out will-change-transform">
+            <div class="flex flex-row items-center mb-2 gap-2">
+                <h2 class="text-2xl font-bold ">{titleProject}</h2>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="size-4 ">
+                    <path d="M6.22 8.72a.75.75 0 0 0 1.06 1.06l5.22-5.22v1.69a.75.75 0 0 0 1.5 0v-3.5a.75.75 0 0 0-.75-.75h-3.5a.75.75 0 0 0 0 1.5h1.69L6.22 8.72Z" />
+                    <path d="M3.5 6.75c0-.69.56-1.25 1.25-1.25H7A.75.75 0 0 0 7 4H4.75A2.75 2.75 0 0 0 2 6.75v4.5A2.75 2.75 0 0 0 4.75 14h4.5A2.75 2.75 0 0 0 12 11.25V9a.75.75 0 0 0-1.5 0v2.25c0 .69-.56 1.25-1.25 1.25h-4.5c-.69 0-1.25-.56-1.25-1.25v-4.5Z" />
+                </svg>
+            </div>
+            <p class="text-base mb-4"><slot /></p>
+                <div class="flex text-xs gap-2">
+                    {badges.map((badge) => {
+                        const icon = tags[badge]; //Accede al tag con el nombre asociado
+                        return (
+                            <span class={`rounded-xl py-1 px-2 ${icon?.class ?? 'bg-gray-400/20'}`}> {icon?.name ?? 'Badge'}</span> // Es inportante usar ? para acceder a la propiedad de icon
+                        )
+                    })}
+                </div>
+          </div>
+        </div>
+    </a>
+    <div class="absolute bottom-0 right-0 size-fit duration-500 opacity-100 md:opacity-0 group-hover:opacity-100 p-5">
+        <a href={linkGithub} target="_blank"><Github class="size-5"></Github></a>
+    </div>
+    </div>
+</div>
