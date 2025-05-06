@@ -68,6 +68,7 @@ const { title } = Astro.props;
 </style>
 
 <script type="module">
+
 const blurCursor = document.getElementById('cursor-blur');
 
 document.addEventListener('mousemove', (e) => {
@@ -78,29 +79,67 @@ document.addEventListener('mousemove', (e) => {
 // Obtener las tarjetas
 const card1 = document.getElementById('card1');
 const card2 = document.getElementById('card2');
+const card3 = document.getElementById('card3');
 
 // Cuando el mouse entra en la primera tarjeta
 card1.addEventListener('mouseenter', () => {
     card2.classList.add('opacity-50');
+    card3.classList.add('opacity-50');
     card1.firstElementChild.classList.add('text-[#F39C12]');
 });
 
 // Cuando el mouse sale de la primera tarjeta
 card1.addEventListener('mouseleave', () => {
     card2.classList.remove('opacity-50');
+    card3.classList.remove('opacity-50');
     card1.firstElementChild.classList.remove('text-[#F39C12]');
 });
 
 // Cuando el mouse entra en la segunda tarjeta
 card2.addEventListener('mouseenter', () => {
     card1.classList.add('opacity-50');
+    card3.classList.add('opacity-50');
     card2.firstElementChild.classList.add('text-[#F39C12]');
 });
 
 // Cuando el mouse sale de la segunda tarjeta
 card2.addEventListener('mouseleave', () => {
     card1.classList.remove('opacity-50');
+    card3.classList.remove('opacity-50');
     card2.firstElementChild.classList.remove('text-[#F39C12]');
+});
+
+// Cuando el mouse entra en la tercera tarjeta
+card3.addEventListener('mouseenter', () => {
+    card1.classList.add('opacity-50');
+    card2.classList.add('opacity-50');
+    card3.firstElementChild.classList.add('text-[#F39C12]');
+});
+
+// Cuando el mouse sale de la tercera tarjeta
+card3.addEventListener('mouseleave', () => {
+    card1.classList.remove('opacity-50');
+    card2.classList.remove('opacity-50');
+    card3.firstElementChild.classList.remove('text-[#F39C12]');
+});
+
+const links = document.querySelectorAll('.nav-link');
+
+links.forEach(link => {
+  link.addEventListener('click', function () {
+    links.forEach(l => l.classList.remove('text-[#F39C12]', 'bg-[white]/10', ));
+    this.classList.add('text-[#F39C12]', 'bg-[white]/10', ); // estilos activos
+  });
+});
+
+const navbar = document.getElementById('navbar');
+
+window.addEventListener('scroll', function (e) {
+  if (window.scrollY > 100) {
+    navbar.classList.add('bg-black/30')
+  }else{
+    navbar.classList.remove('bg-black/30')
+  }
 });
   
 </script>
