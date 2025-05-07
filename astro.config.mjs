@@ -5,6 +5,6 @@ import tailwind from '@astrojs/tailwind';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://thb-l85.github.io',
-  base: 'Porfolio',
+  base: 'Portfolio',
   integrations: [tailwind()]
 });
