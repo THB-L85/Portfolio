@@ -31,6 +31,7 @@ import ExperienceCard from "../components/ExperienceCard.astro";
 import Tailwind from "../components/icons/Tailwind.astro";
 import Gmail from "../components/icons/Gmail.astro";
 import Project from "../components/Project.astro";
+import Skills from "../components/Skills.astro";
 
 const startYear = 2023;
 const currentYear = new Date().getFullYear();
@@ -100,46 +101,12 @@ const currentMonths = totalMonths % 12; // Meses restantes
         />
       </div>
     </section>
-    <section class="flex flex-col w-full h-auto mx-auto lg:w-[1128px] pt-28" id="skills">
+    <section id="skills" class="flex flex-col w-full h-auto mx-auto lg:w-[1128px] pt-28">
       <div class="flex justify-center mb-10">
         <Title>Skills</Title>
       </div>
-      <div
-        class="flex flex-wrap gap-4 lg:gap-9 justify-center text-center mb-5 lg:mb-16"
-      >
-        <CardSkill titleCard="Web Development">
-          <HTML class="w-auto h-12" />
-          <CSS class="w-auto h-12" />
-          <Bootstrap class="w-auto h-12" />
-          <Tailwind class="w-auto h-12"/>
-        </CardSkill>
-        <CardSkill titleCard="Programming Lenguages">
-          <PHP class="w-auto h-9 mt-3" />
-          <Java class="w-auto h-12" />
-          <CSharp class="w-auto h-12" />
-          <JavaScript class="w-auto h-12" />
-          <Dart class="w-auto h-12" />
-        </CardSkill>
-        <CardSkill titleCard="Frameworks">
-          <Laravel class="w-auto h-12" />
-          <DotNet class="w-auto h-12" />
-          <Flutter class="w-auto h-12" />
-        </CardSkill>
-      </div>
-      <div class="flex flex-wrap gap-4 lg:gap-9 justify-center text-center">
-        <CardSkill titleCard="Data Bases">
-          <SQLServer class="w-auto h-12" />
-          <MySQL class="w-auto h-12" />
-        </CardSkill>
-        <CardSkill titleCard="Tools">
-          <Git class="w-auto h-12" />
-          <GitHubIcon class="w-auto h-12" />
-          <Postman class="w-auto h-12" />
-          <Swagger class="w-auto h-12" />
-          <Figma class="w-auto h-12" />
-          <AdobeXd class="w-auto h-12" />
-          <Ubuntu class="w-auto h-12" />
-        </CardSkill>
+      <div class="flex-wrap inline-flex content-start justify-center w-full h-[15rem] mx-auto lg:w-[850px] ">
+        <Skills />
       </div>
     </section>
     <section id="experience" class="flex flex-col w-full h-auto mx-auto lg:w-[1128px] pt-28 my-16">
