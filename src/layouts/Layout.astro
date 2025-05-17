@@ -126,8 +126,8 @@ card3.addEventListener('mouseleave', () => {
     card3.firstElementChild.classList.remove('text-[#F39C12]');
 });
 
+// Estilos para el navbar al hacer clic
 const links = document.querySelectorAll('.nav-link');
-
 links.forEach(link => {
   link.addEventListener('click', function () {
     links.forEach(l => l.classList.remove('text-[#F39C12]', 'bg-[white]/10', ));
@@ -135,10 +135,10 @@ links.forEach(link => {
   });
 });
 
+// Estilos para el navbar al hacer scroll
 const navbar = document.getElementById('navbar');
-
 window.addEventListener('scroll', function (e) {
-  if (window.scrollY > 100) {
+  if (window.scrollY > 70) {
     navbar.classList.add('bg-black/30')
   }else{
     navbar.classList.remove('bg-black/30')
