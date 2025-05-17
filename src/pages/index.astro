@@ -13,25 +13,13 @@ import Skills from "../components/Skills.astro";
 const startYear = 2023;
 const currentYear = new Date().getFullYear();
 const yearsCount = currentYear - startYear;
-
-const currentDate = new Date(); // Fecha actual
-
-const startActualJob = new Date(2024, 10); // Noviembre de 2024
-
-// Cálculo directo de años y meses
-const totalMonths = (currentDate.getFullYear() - startActualJob.getFullYear()) * 12 
-                   + (currentDate.getMonth() - startActualJob.getMonth());
-
-const currentYears = Math.floor(totalMonths / 12); // Años completos
-const currentMonths = totalMonths % 12; // Meses restantes
 ---
 
 <Layout
   title="Luis Duran's Portfolio - Software Developer & Web Developer"
 >
   <main id="home" >
-    <section 
-      class="flex flex-col-reverse lg:flex-row justify-center w-full mx-auto px-7 md:px-32 lg:flex-wrap lg:w-[924px] lg:h-[316px] lg:p-0 lg:mt-52 lg:mb-7 mt-16"
+    <section class="flex flex-col-reverse lg:flex-row justify-center w-full mx-auto px-7 md:px-32 lg:flex-wrap lg:w-[924px] lg:h-[316px] lg:p-0 lg:mt-52 lg:mb-7 mt-16"
     >
       <div class="lg:w-2/3 mt-3">
         <h1
@@ -78,26 +66,23 @@ const currentMonths = totalMonths % 12; // Meses restantes
         />
       </div>
     </section>
-    <section id="skills" class="flex flex-col w-full h-dvh px-1 md:mx-auto lg:w-[1128px] pt-24">
+    <section id="skills" class="flex flex-col w-full px-1 md:mx-auto lg:w-[1128px] pt-24">
       <div class="flex justify-center mb-10">
         <Title>Skills</Title>
       </div>
-      <div class="flex-wrap inline-flex content-start justify-center w-full  mx-auto lg:w-[850px] ">
+      <div class="flex-wrap inline-flex md:content-start justify-center w-full px-3 mx-auto lg:w-[850px] ">
         <Skills />
       </div>
     </section>
-    <section id="experience" class="flex flex-col w-full h-auto mx-auto lg:w-[1128px] pt-28 my-16">
+    <section id="experience" class="flex flex-col w-full px-1 md:mx-auto lg:w-[1128px] pt-24">
       <div class="flex justify-center mb-10">
         <Title>Experience</Title>
       </div>
       <div class="mx-6 lg:mx-44">
-        <ExperienceCard 
-          currentYears={ currentYears}
-          currentMonths={ currentMonths}
-        />
+        <ExperienceCard />
       </div>
     </section>
-    <section id="projects" class="flex flex-col w-full h-auto mx-auto lg:w-[1128px] pt-28 my-16">
+    <section id="projects" class="flex flex-col w-full mx-auto lg:w-[1128px] pt-24">
       <div class="flex justify-center mb-10">
         <Title>Projects</Title>
       </div>
@@ -111,7 +96,7 @@ const currentMonths = totalMonths % 12; // Meses restantes
       <div class="flex justify-center mb-10">
         <Title>About me</Title>
       </div>
-      <div class="mx-10 lg:mx-52 text-base lg:text-lg opacity-80">
+      <div class="mx-10 lg:mx-52 text-lg opacity-80">
         <span>
           I'm a passionate software developer who values teamwork, continuous learning, and writing clean, maintainable code.
           I enjoy collaborating on meaningful projects and take pride in building scalable and reliable web applications using tools like Laravel, JavaScript, and .NET.
