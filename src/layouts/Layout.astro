@@ -23,7 +23,7 @@ const { title } = Astro.props;
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
   </head>
-  <body class="relative dark:text-white">
+  <body class="relative bg-gray-50 dark:bg-[#09101b] text-gray-800 dark:text-white transition-all duration-300">
 	<!-- <div class="absolute top-0 bottom-0 z-[-2] min-h-screen w-full bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div> -->
     <Header />
     <div id="cursor-blur" class="pointer-events-none fixed z-[-1] blur-lg"></div>
@@ -40,8 +40,6 @@ const { title } = Astro.props;
     scroll-snap-type: y mandatory;
   }
   body {
-    background: #09101b;
-    /* background: #243c66; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -54,7 +52,6 @@ const { title } = Astro.props;
       box-shadow: 0 0 5px 8px rgba(34, 197, 94, 0);
     }
   }
-
   .pulsate {
     animation: borderPulse 2s infinite;
   }
@@ -72,77 +69,102 @@ const { title } = Astro.props;
 
 <script type="module">
 
-const blurCursor = document.getElementById('cursor-blur');
+  const blurCursor = document.getElementById('cursor-blur');
 
-document.addEventListener('mousemove', (e) => {
-  blurCursor.style.left = `${e.clientX}px`;
-  blurCursor.style.top = `${e.clientY}px`;
-});
-
-// Obtener las tarjetas
-const card1 = document.getElementById('card1');
-const card2 = document.getElementById('card2');
-const card3 = document.getElementById('card3');
-
-// Cuando el mouse entra en la primera tarjeta
-card1.addEventListener('mouseenter', () => {
-    card2.classList.add('opacity-50');
-    card3.classList.add('opacity-50');
-    card1.firstElementChild.classList.add('text-[#F39C12]');
-});
-
-// Cuando el mouse sale de la primera tarjeta
-card1.addEventListener('mouseleave', () => {
-    card2.classList.remove('opacity-50');
-    card3.classList.remove('opacity-50');
-    card1.firstElementChild.classList.remove('text-[#F39C12]');
-});
-
-// Cuando el mouse entra en la segunda tarjeta
-card2.addEventListener('mouseenter', () => {
-    card1.classList.add('opacity-50');
-    card3.classList.add('opacity-50');
-    card2.firstElementChild.classList.add('text-[#F39C12]');
-});
-
-// Cuando el mouse sale de la segunda tarjeta
-card2.addEventListener('mouseleave', () => {
-    card1.classList.remove('opacity-50');
-    card3.classList.remove('opacity-50');
-    card2.firstElementChild.classList.remove('text-[#F39C12]');
-});
-
-// Cuando el mouse entra en la tercera tarjeta
-card3.addEventListener('mouseenter', () => {
-    card1.classList.add('opacity-50');
-    card2.classList.add('opacity-50');
-    card3.firstElementChild.classList.add('text-[#F39C12]');
-});
-
-// Cuando el mouse sale de la tercera tarjeta
-card3.addEventListener('mouseleave', () => {
-    card1.classList.remove('opacity-50');
-    card2.classList.remove('opacity-50');
-    card3.firstElementChild.classList.remove('text-[#F39C12]');
-});
-
-// Estilos para el navbar al hacer clic
-const links = document.querySelectorAll('.nav-link');
-links.forEach(link => {
-  link.addEventListener('click', function () {
-    links.forEach(l => l.classList.remove('text-[#F39C12]', 'bg-[white]/10', ));
-    this.classList.add('text-[#F39C12]', 'bg-[white]/10', ); // estilos activos
+  document.addEventListener('mousemove', (e) => {
+    blurCursor.style.left = `${e.clientX}px`;
+    blurCursor.style.top = `${e.clientY}px`;
   });
-});
 
-// Estilos para el navbar al hacer scroll
-const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', function (e) {
-  if (window.scrollY > 70) {
-    navbar.classList.add('bg-black/30')
-  }else{
-    navbar.classList.remove('bg-black/30')
-  }
-});
+  // Obtener las tarjetas
+  const card1 = document.getElementById('card1');
+  const card2 = document.getElementById('card2');
+  const card3 = document.getElementById('card3');
+
+  // Cuando el mouse entra en la primera tarjeta
+  card1.addEventListener('mouseenter', () => {
+      card2.classList.add('opacity-50');
+      card3.classList.add('opacity-50');
+      card1.firstElementChild.classList.add('text-[#F39C12]');
+  });
+
+  // Cuando el mouse sale de la primera tarjeta
+  card1.addEventListener('mouseleave', () => {
+      card2.classList.remove('opacity-50');
+      card3.classList.remove('opacity-50');
+      card1.firstElementChild.classList.remove('text-[#F39C12]');
+  });
+
+  // Cuando el mouse entra en la segunda tarjeta
+  card2.addEventListener('mouseenter', () => {
+      card1.classList.add('opacity-50');
+      card3.classList.add('opacity-50');
+      card2.firstElementChild.classList.add('text-[#F39C12]');
+  });
+
+  // Cuando el mouse sale de la segunda tarjeta
+  card2.addEventListener('mouseleave', () => {
+      card1.classList.remove('opacity-50');
+      card3.classList.remove('opacity-50');
+      card2.firstElementChild.classList.remove('text-[#F39C12]');
+  });
+
+  // Cuando el mouse entra en la tercera tarjeta
+  card3.addEventListener('mouseenter', () => {
+      card1.classList.add('opacity-50');
+      card2.classList.add('opacity-50');
+      card3.firstElementChild.classList.add('text-[#F39C12]');
+  });
+
+  // Cuando el mouse sale de la tercera tarjeta
+  card3.addEventListener('mouseleave', () => {
+      card1.classList.remove('opacity-50');
+      card2.classList.remove('opacity-50');
+      card3.firstElementChild.classList.remove('text-[#F39C12]');
+  });
+
+  // Estilos para el navbar al hacer clic
+  const links = document.querySelectorAll('.nav-link');
+  links.forEach(link => {
+    link.addEventListener('click', function () {
+      links.forEach(l => l.classList.remove('text-[#F39C12]', 'bg-[white]/10', ));
+      this.classList.add('text-[#F39C12]', 'bg-[white]/10', ); // estilos activos
+    });
+  });
+
+  // Estilos para el navbar al hacer scroll
+  const navbar = document.getElementById('navbar');
   
+  window.addEventListener('scroll', function (e) {
+    let bgHeader = html.classList.contains('dark') ? 'bg-black/30' : 'bg-slate-400/30';
+    if (window.scrollY > 70) {
+      navbar.classList.add(bgHeader)
+    }else{
+      navbar.classList.remove(bgHeader)
+    }
+  });
+  
+  // Toggle theme
+  const themeToggle = document.getElementById('theme-toggle');
+  const html = document.documentElement;
+
+  // Cargar estado desde localStorage (opcional)
+  if (localStorage.getItem('theme') === 'dark') {
+    html.classList.add('dark');
+  } else {
+    html.classList.remove('dark');
+  }
+
+  themeToggle.addEventListener('click', () => {
+    if (html.classList.contains('dark')) {
+      html.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+      themeToggle.innerText = '🌙 Dark Mode';
+    } else {
+      html.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+      themeToggle.innerText = '☀️ Light Mode';
+    }
+  });
+
 </script>
