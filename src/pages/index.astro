@@ -18,12 +18,12 @@ const yearsCount = currentYear - startYear;
 <Layout
   title="Luis Duran's Portfolio - Software Developer & Web Developer"
 >
-  <main id="home" >
-    <section class="flex flex-col-reverse lg:flex-row justify-center w-full mx-auto px-7 md:px-32 lg:flex-wrap lg:w-[924px] lg:h-[316px] lg:p-0 lg:mt-52 lg:mb-7 mt-20"
+  <main class="flex flex-col gap-9 items-center px-6 md:px-32 sm:py-28 py-20 xl:mx-20 xl:py-52" id="home">
+    <section class="flex flex-col-reverse xl:flex-row xl:flex-wrap justify-center lg:w-[820px]"
     >
-      <div class="lg:w-2/3 mt-3">
+      <div class="xl:w-2/3 mt-3">
         <h1
-          class="text-5xl lg:text-6xl text-center md:text-left font-bold text-balance md:px-0"
+          class="text-5xl lg:text-6xl text-center md:text-left font-bold text-balance"
         >
           Hi, I'm Luis Duran
         </h1>
@@ -42,7 +42,7 @@ const yearsCount = currentYear - startYear;
             >Mexico City, Mexico</span
           >
           <span
-            class="flex justify-center w-full md:w-auto mb-4 md:mb-0 md:pl-10 md:self-center"
+            class="flex justify-center w-full md:w-auto mb-4 md:mb-0 md:pl-5 lg:pl-0 md:self-center"
             ><Bange>Available for freelance work</Bange></span  
           >
         </div>
@@ -66,38 +66,38 @@ const yearsCount = currentYear - startYear;
         />
       </div>
     </section>
-    <section id="skills" class="flex flex-col w-full px-1 md:mx-auto lg:w-[1128px] pt-24">
+    <section class="flex flex-col w-full lg:w-[820px]" id="skills">
       <div class="flex justify-center mb-10">
         <Title>Skills</Title>
       </div>
-      <div class="flex-wrap inline-flex md:content-start justify-center w-full px-3 mx-auto lg:w-[850px] ">
+      <div class="flex-wrap inline-flex md:content-start justify-center">
         <Skills />
       </div>
     </section>
-    <section id="experience" class="flex flex-col w-full px-1 md:mx-auto lg:w-[1128px] pt-24">
+    <section class="flex flex-col w-full lg:w-[820px]" id="experience">
       <div class="flex justify-center mb-10">
         <Title>Experience</Title>
       </div>
-      <div class="mx-6 lg:mx-44">
+      <div class="">
         <ExperienceCard />
       </div>
     </section>
-    <section id="projects" class="flex flex-col w-full mx-auto lg:w-[1128px] pt-24">
+    <section class="flex flex-col w-full lg:w-[820px]" id="projects">
       <div class="flex justify-center mb-10">
         <Title>Projects</Title>
       </div>
-      <div class="mx-4 md:mx-10 lg:mx-32 text-base lg:text-lg">
+      <div class="mx-4 text-base lg:text-lg">
         <div class="grid grid-cols-1 gap-4 md:grid-cols-1">
           <Project linkProject="https://coffee-blog-dev.netlify.app/" linkGithub="https://github.com/THB-L85/coffee_blog" imageProject="./coffee_blog.png" titleProject="Coffee Blog" badges={["HTML","CSS"]}>This is a Coffee Blog for Coffee Lovers & Devs.</Project>
         </div>
       </div>
     </section>
-    <section id="about_me" class="flex flex-col w-full h-auto mx-auto lg:w-[1128px] my-16">
+    <section class="flex flex-col w-full lg:w-[820px]" id="about_me" >
       <div class="flex justify-center mb-10">
-        <Title>About me</Title>
+        <Title>About</Title>
       </div>
-      <div class="mx-10 lg:mx-52 text-lg opacity-80">
-        <span>
+      <div class="text-lg opacity-80">
+        <span class="md:text-xl">
           I'm a passionate software developer who values teamwork, continuous learning, and writing clean, maintainable code.
           I enjoy collaborating on meaningful projects and take pride in building scalable and reliable web applications using tools like Laravel, JavaScript, and .NET.
           I'm always open to new challenges that allow me to grow professionally and contribute value to every project I join.
