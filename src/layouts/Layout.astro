@@ -23,7 +23,7 @@ const { title } = Astro.props;
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
   </head>
-  <body class="relative bg-gray-50 dark:bg-[#09101b] text-gray-800 dark:text-white transition-all duration-300">
+  <body class="relative bg-gray-50 dark:bg-[#09101b] text-gray-800 dark:text-white body-text-color-transition transition-colors duration-500">
 	<!-- <div class="absolute top-0 bottom-0 z-[-2] min-h-screen w-full bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div> -->
     <Header />
     <div id="cursor-blur" class="pointer-events-none fixed z-[-1] blur-lg"></div>
@@ -55,6 +55,10 @@ const { title } = Astro.props;
   .pulsate {
     animation: borderPulse 2s infinite;
   }
+
+  /* .body-text-color-transition {
+    transition: color 0.5s;
+  } */
 
   /* #cursor-blur {
     width: 600px;
@@ -159,11 +163,11 @@ const { title } = Astro.props;
     if (html.classList.contains('dark')) {
       html.classList.remove('dark');
       localStorage.setItem('theme', 'light');
-      themeToggle.innerText = '🌙 Dark Mode';
+      themeToggle.innerText = '🌙';
     } else {
       html.classList.add('dark');
       localStorage.setItem('theme', 'dark');
-      themeToggle.innerText = '☀️ Light Mode';
+      themeToggle.innerText = '☀️';
     }
   });
 
