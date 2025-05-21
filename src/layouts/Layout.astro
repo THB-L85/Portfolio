@@ -11,7 +11,7 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en" class="cursor-auto">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
@@ -24,9 +24,10 @@ const { title } = Astro.props;
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
   </head>
   <body class="relative bg-gray-50 dark:bg-[#09101b] text-gray-800 dark:text-white body-text-color-transition transition-colors duration-500">
-	<!-- <div class="absolute top-0 bottom-0 z-[-2] min-h-screen w-full bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div> -->
+    <div class="cursor bg-gray-500 dark:bg-white" id="cursor"></div>
+    <div class="cursor-follower border-[1px] border-gray-500 dark:border-white" id="cursorFollower"></div>
     <Header />
-    <div id="cursor-blur" class="pointer-events-none fixed z-[-1] blur-lg"></div>
+
     <slot />
   </body>
 </html>
@@ -43,6 +44,7 @@ const { title } = Astro.props;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    cursor: none;
   }
   @keyframes borderPulse {
     0%, 100% {
@@ -55,7 +57,31 @@ const { title } = Astro.props;
   .pulsate {
     animation: borderPulse 2s infinite;
   }
-
+  .cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate3d(-50%, -50%, 0);
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.5);
+    transition: transform 0.05s linear;
+  }
+  .cursor-follower {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    z-index: 9999;
+    pointer-events: none;
+    transform: translate3d(-50%, -50%, 0);
+    transition: transform 0.15s ease-out;
+  }
   /* .body-text-color-transition {
     transition: color 0.5s;
   } */
@@ -73,12 +99,19 @@ const { title } = Astro.props;
 
 <script type="module">
 
-  const blurCursor = document.getElementById('cursor-blur');
+    const cursor = document.getElementById("cursor");
+    const follower = document.getElementById("cursorFollower");
 
-  document.addEventListener('mousemove', (e) => {
-    blurCursor.style.left = `${e.clientX}px`;
-    blurCursor.style.top = `${e.clientY}px`;
-  });
+    document.addEventListener("mousemove", (e) => {
+      const x = e.clientX;
+      const y = e.clientY;
+
+      cursor.style.left = `${x}px`;
+      cursor.style.top = `${y}px`;
+
+      follower.style.left = `${x}px`;
+      follower.style.top = `${y}px`;
+    });
 
   // Obtener las tarjetas
   const card1 = document.getElementById('card1');

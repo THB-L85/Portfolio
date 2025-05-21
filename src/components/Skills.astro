@@ -170,7 +170,7 @@ const icons = [
     // .sort((a,b) => a.name.length - b.name.length)
     .map(({name, level, width, icon:Icon}) => (
       <div class="h-[5rem]">
-        <div class="flex flex-col w-fill max-h-[3rem] hover:max-h-[4.5rem] mx-2 px-4 py-1.5 rounded-xl bg-slate-300/45 dark:bg-slate-300/20 group transition-all duration-500  overflow-hidden text-center text-lg">
+        <div class="flex flex-col w-fill max-h-[3rem] hover:max-h-[4.5rem] mx-2 px-4 py-1.5 rounded-xl bg-slate-300/45 dark:bg-slate-300/20 group transition-all duration-500  overflow-hidden text-center text-lg hover:shadow-xl">
           <div class="flex flex-row items-center justify-center gap-3 pt-1">
             <Icon class={width} />
             <h4>{name}</h4>

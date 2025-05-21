@@ -31,10 +31,10 @@ const tags: Record<string, {name:string,class?:string}> = {
 }
 
 ---
-<div class="relative w-full group overflow-hidden rounded-xl">
-    <a href={linkProject} target="_blank">
-        <img src={imageProject} alt="img-proyect" class="w-full h-auto rounded-xl center transition-transform duration-300 group-hover:scale-110">
-        <div class="absolute bottom-0 left-0 right-0 h-[100%] content-end opacity-100 bg-gradient-to-t from-black/70 to-transparent group-hover:bg-gradient-to-t group-hover:from-black/80 group-hover:to-transparent transition-all md:opacity-0 group-hover:opacity-100 duration-300 px-5">
+<div class="relative w-full group overflow-hidden rounded-xl dark:hover:border-[0.5px] dark:hover:border-gray-500 hover:shadow-2xl">
+    <a href={linkProject} target="_blank" class="overflow-hidden">
+        <img src={imageProject} alt="img-proyect" class="w-full h-auto center rounded-xl transition-transform duration-300 scale-110 group-hover:scale-100">
+        <div class="absolute bottom-0 left-0 right-0 h-full content-end opacity-100 bg-gradient-to-t from-black/70 to-transparent group-hover:bg-gradient-to-t group-hover:from-black/70 group-hover:to-transparent transition-all md:opacity-0 group-hover:opacity-100 duration-300 px-5">
           <div class="relative -translate-y-4 md:-translate-y-0 md:group-hover:-translate-y-4 transition-transform duration-500 ease-in-out will-change-transform text-white">
             <div class="flex flex-row items-center mb-2 gap-2">
                 <h2 class="text-2xl font-bold">{titleProject}</h2>
