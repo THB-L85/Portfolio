@@ -9,6 +9,7 @@ interface Props {
     titleProject: string;
     linkGithub:   string;
 }
+
 const {linkProject}  = Astro.props;
 const {imageProject} = Astro.props;
 const {titleProject} = Astro.props;
@@ -27,7 +28,15 @@ const tags: Record<string, {name:string,class?:string}> = {
     CSS: {
         name:"CSS",
         // class:"bg-[#264de4]/20"
-    }
+    },
+    SASS: {
+        name:"SASS",
+        // class:"bg-[#cc6699]/20"
+    },
+    JS: {
+        name:"JavaScript",
+        // class:"bg-[#f7df1e]/20"
+    },
 }
 
 ---
