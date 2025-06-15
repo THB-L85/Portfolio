@@ -183,24 +183,27 @@ const { title } = Astro.props;
   
   // Toggle theme
   const themeToggle = document.getElementById('theme-toggle');
+  const iconToggle = document.getElementById('icon-toggle');
   const html = document.documentElement;
 
   // Cargar estado desde localStorage (opcional)
   if (localStorage.getItem('theme') === 'dark') {
     html.classList.add('dark');
+    iconToggle.src = './brightness.png'; // change icon to sun
   } else {
     html.classList.remove('dark');
+    iconToggle.src = './moon.png'; // change icon to sun
   }
 
   themeToggle.addEventListener('click', () => {
     if (html.classList.contains('dark')) {
       html.classList.remove('dark');
       localStorage.setItem('theme', 'light');
-      themeToggle.innerText = '🌙';
+      iconToggle.src = './moon.png'; // change icon to moon
     } else {
       html.classList.add('dark');
       localStorage.setItem('theme', 'dark');
-      themeToggle.innerText = '☀️';
+      iconToggle.src = './brightness.png'; // change icon to sun
     }
   });
 
